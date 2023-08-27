@@ -7,7 +7,8 @@ A simple set of steps to create a simple script that is run every hour to automa
 
 `timeMachineScript.sh`:
 1. Change line 3: use name of your backup harddisk (as it appears when its mounted)
-2. Move the file to a location of your choice (e.g. `Documents` or `Developer`)
+2. Run `chmod +x timeMachineScript.sh`
+3. Move the file to a location of your choice (e.g. `~/bin/timeMachineScript.sh`)
 
 `com.username.timeMachineScript.plist`:
 1. Change the name of this file: use your Mac username (e.g. `com.micah.timeMachineScript.plist`)
