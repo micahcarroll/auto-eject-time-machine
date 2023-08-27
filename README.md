@@ -1,5 +1,5 @@
 # auto-eject-time-machine
-A simple set of steps to create a simple script that is run every hour to automatically eject your TimeMachine disk after backup. 
+A simple set of steps to create a simple script that is run every hour to automatically eject your TimeMachine disk after backup. Specifically, the script as written will eject the disk if a backup was completed today.
 
 *Why?* I hate having to remember doing it manually, and have corrupted a hard-drive by removing it physically without ejecting it first.
 
