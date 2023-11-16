@@ -5,8 +5,8 @@ set -e
 
 backupVolumeUUID="###################."
 
-backupVolumeIdentifier=diskutil info $backupVolumeUUID | awk 'BEGIN{FS=":";}/Device Identifier:/{printf $NF}END{printf "\n"};' | xargs
-backupVolumeName=diskutil info $backupVolumeUUID | awk 'BEGIN{FS=":";}/Volume Name:/{print $NF}END{printf "\n"};' | xargs
+backupVolumeIdentifier=$(diskutil info $backupVolumeUUID | awk 'BEGIN{FS=":";}/Device Identifier:/{printf $NF}END{printf "\n"};' | xargs)
+backupVolumeName=$(diskutil info $backupVolumeUUID | awk 'BEGIN{FS=":";}/Volume Name:/{print $NF}END{printf "\n"};' | xargs)
 
 # Get the latest backup timestamp and calculate the difference in seconds
 latestBackupFileName=$(tmutil latestbackup | xargs -I {} basename -s .backup {} | cut -d '-' -f 1-4)
