@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Enable the "exit on error" option (this is needed for handling cases where backup disk is not plugged).
+set -e
+
+
 backupVolumeName=""
 backupVolumeUUID=""
 backupVolumeIdentifier=""
@@ -30,7 +34,7 @@ else
     if ! mount | grep -q "/Volumes/$backupVolumeName"; then
         echo "Backup disk '$backupVolumeName' is not mounted. Need to mount the encrypted disk."
         backupVolumePassword=security find-generic-password -a $backupVolumeUUID -w | xxd -p -r | rev | cut -c 1- | rev
-        diskutil apfs unlockVolume $backupVolumeIdentifier -user $backupVolumeUUID -passphrase $backupVolumePassword -verify
+        diskutil apfs unlockVolume $backupVolumeIdentifier -user $backupVolumeUUID -passphrase $backupVolumePassword # unlockVolume automatically mounts the disk
     fi
     echo "Starting backup now."
     tmutil startbackup --auto --block # wait for the backup to finish
