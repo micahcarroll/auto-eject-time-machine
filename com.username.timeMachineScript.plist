@@ -12,5 +12,9 @@
     <integer>3600</integer>
     <key>RunAtLoad</key>
     <true/>
+    <key>StandardOutPath</key>
+    <string>/tmp/timeMachineScript.log</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/timeMachineScript.log</string>
 </dict>
 </plist>
