@@ -4,17 +4,21 @@
 <dict>
     <key>Label</key>
     <string>com.username.timeMachineScript</string>
+    <key>ProcessType</key>
+    <string>Adaptive</string>
     <key>ProgramArguments</key>
     <array>
-        <string>/username/path/to/timeMachineScript.sh</string>
+        <string>path-to-script/timeMachineScript.sh</string>
     </array>
+    <key>StartOnMount</key>
+    <true/>
     <key>StartInterval</key>
-    <integer>3600</integer>
+    <integer>3300</integer>
     <key>RunAtLoad</key>
     <true/>
     <key>StandardOutPath</key>
-    <string>/tmp/timeMachineScript.log</string>
+    <string>/tmp/com.username.timeMachineScript.log</string>
     <key>StandardErrorPath</key>
-    <string>/tmp/timeMachineScript.log</string>
+    <string>/tmp/com.username.timeMachineScript.log</string>
 </dict>
 </plist>
